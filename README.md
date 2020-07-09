@@ -14,11 +14,11 @@ Authors: Abebe Chukalla, Bich Tran, Solomon Seyoum
 
 ### Module 1: Introduction and Usage
 
-- Unit 1.4 WaPOR spatial data analysis using Python packages
+- Unit 4 WaPOR spatial data analysis using Python packages
     * Download WaPOR raster data
     * Clip and resample
     * Raster calculation
-- Unit 1.5 WaPOR API
+- Unit 5 WaPOR API
     * Get catalog and available data table
     * Get point and area time-series
     * Get raster and crop raster
