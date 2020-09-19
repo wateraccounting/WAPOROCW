@@ -23,22 +23,3 @@ Authors: Abebe Chukalla, Bich Tran, Solomon Seyoum
     * Get point and area time-series
     * Get raster and crop raster
     * Get custom Water Productivity raster
-
-### Module 2: Water Productivity
--
-
-### Module 3: Water Accounting
--
-
-## Python requirements
-### Install Python distribution
->Anaconda: https://www.anaconda.com/products/individual
->Read more on Jupyter notebook: https://jupyter.org/, https://packaging.python.org/overview/
-### Install Python libraries/packages
-a) **pip** installs python **packages** in any environment. **Install a pip package in the current Jupyter kernel**
-> <br/> <font color='#0d00ff'>import sys </font>
-> <br/> <font color='#0d00ff'>!{sys.executable} -m pip install 'package' </font>
-
-b) **conda** installs any package in **conda environments**. **Install a conda package in the current Jupyter kernel**
-> <br/> <font color='#0d00ff'>import sys </font>
-> <br/> <font color='#0d00ff'>!conda install --yes --prefix {sys.prefix} 'package' </font>
