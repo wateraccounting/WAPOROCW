@@ -23,8 +23,9 @@ from .WaporAPI import __WaPOR_API_class
 from .download_dekadal import main as download_dekadal
 from .download_monthly import main as download_monthly
 from .download_yearly import main as download_yearly
+from .download_daily import main as download_daily
 
-__all__ = ['download_dekadal','download_monthly','download_yearly']
+__all__ = ['download_dekadal','download_monthly','download_yearly','download_daily']
 __doc__ = """module for FAO WAPOR API"""
 __version__ = '0.1'
 
