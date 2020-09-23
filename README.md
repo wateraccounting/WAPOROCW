@@ -23,3 +23,40 @@ Authors: Abebe Chukalla, Bich Tran, Solomon Seyoum
     * Get point and area time-series
     * Get raster and crop raster
     * Get custom Water Productivity raster
+
+### Run notebooks
+
+- Step 1: Download repository zipfile and unzip 
+
+OR
+
+Clone in Git Bash
+
+    >>> git clone https://github.com/wateraccounting/WAPOROCW.git
+
+- Step 2: Open Anaconda prompt, change directory to folder **..\WAPOROCW\notebooks**
+
+    >>> cd PATH\WAPOROCW\notebooks
+
+- Step 3: Activate environment with required packages
+
+    >>> conda activate ENVIRONMENT_NAME
+
+OR 
+
+Create a new environment from environment.yml file
+
+    >>> conda env create
+
+Answer 'y' to the prompt to continue installing required packages. Then activate environment
+
+    >>> conda activate waporocw
+
+- Step 4: Start jupyter notebooks
+
+    >>> jupyter notebook
+
+
+
+
+
