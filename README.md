@@ -43,14 +43,14 @@ Clone in Git Bash ([Git](https://git-scm.com/) needs to be installed)
 
     >>> conda env create
     
-![](create_env.png)
+![](./create_env.PNG)
 
 **Step 4**: Then activate environment with required packages
 
     >>> conda activate waporocw
   
-**Step 5**: Start jupyter notebooks
+**Step 5**: Start jupyter notebook
 
     >>> jupyter notebook
     
-![](activate.png)
+![](./activate_env.PNG)
