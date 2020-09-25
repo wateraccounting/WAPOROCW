@@ -30,7 +30,7 @@ Authors: Abebe Chukalla, Bich Tran, Solomon Seyoum
 
 OR
 
-Clone in Git Bash
+Clone in Git Bash ([Git](https://git-scm.com/) needs to be installed)
 
     >>> git clone https://github.com/wateraccounting/WAPOROCW.git
 
@@ -38,25 +38,23 @@ Clone in Git Bash
 
     >>> cd PATH\WAPOROCW\notebooks
 
-- Step 3: Activate environment with required packages
-
-    >>> conda activate ENVIRONMENT_NAME
-
-OR 
-
-Create a new environment from environment.yml file
+- Step 3: Create a new environment from environment.yml file
 
     >>> conda env create
 
-Answer 'y' to the prompt to continue installing required packages. Then activate environment
+Answer 'y' to the prompt to continue installing required packages. 
+
+![](activate_env.png)
+
+- Step 4: Then activate environment with required packages
 
     >>> conda activate waporocw
 
-- Step 4: Start jupyter notebooks
+- Step 5: Start jupyter notebooks
 
     >>> jupyter notebook
 
-
+![](activate.png)
 
 
 
