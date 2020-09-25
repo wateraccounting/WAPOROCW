@@ -2,7 +2,7 @@
 ![](http://www.fao.org/typo3temp/pics/93f49ce381.jpg)
 ## [See the full course on IHE Delft OpenCourseWare](https://ocw.un-ihe.org/course/view.php?id=92&section=0)
 
-Authors: Abebe Chukalla, Bich Tran, Solomon Seyoum
+Authors: Bich Tran, Abebe Chukalla, Solomon Seyoum
 
 <html>
   <head>
@@ -26,7 +26,7 @@ Authors: Abebe Chukalla, Bich Tran, Solomon Seyoum
 
 ### Run notebooks
 
-- Step 1: Download repository zipfile and unzip 
+**Step 1**: Download repository zipfile and unzip 
 
 OR
 
@@ -34,27 +34,23 @@ Clone in Git Bash ([Git](https://git-scm.com/) needs to be installed)
 
     >>> git clone https://github.com/wateraccounting/WAPOROCW.git
 
-- Step 2: Open Anaconda prompt, change directory to folder **..\WAPOROCW\notebooks**
 
-    >>> cd PATH\WAPOROCW\notebooks
+**Step 2**: Open Anaconda prompt, change directory to folder **..\WAPOROCW\notebooks**
 
-- Step 3: Create a new environment from environment.yml file
+    >>> cd ..PATH..\WAPOROCW\notebooks
+    
+**Step 3**: Create a new environment from environment.yml file
 
     >>> conda env create
+    
+![](create_env.png)
 
-Answer 'y' to the prompt to continue installing required packages. 
-
-![](activate_env.png)
-
-- Step 4: Then activate environment with required packages
+**Step 4**: Then activate environment with required packages
 
     >>> conda activate waporocw
-
-- Step 5: Start jupyter notebooks
+  
+**Step 5**: Start jupyter notebooks
 
     >>> jupyter notebook
-
+    
 ![](activate.png)
-
-
-
