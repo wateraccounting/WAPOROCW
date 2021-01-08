@@ -38,7 +38,7 @@ def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31',
     elif level==3:
         print('Level 3 data only available in some areas with specific data cube code below: ')        
         for i,row in catalog.iterrows():            
-            if (f'L3_{data}' in row['code'])&('_M' in row['code']):
+            if (f'L3' in row['code'])&(f'{data}' in row['code'])&(row['code'][-1]=='M'):
                 print('%s: %s'%(row['caption'],row['code']))
         cube_code=input('Insert Level 3 cube code for the selected area: ')   
     
