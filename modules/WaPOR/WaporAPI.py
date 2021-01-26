@@ -197,8 +197,8 @@ class __WaPOR_API_class(object):
                         df_dict['time_code'].append(time_info[0]['code'])
                 if row[i]['type']=='DATA_CELL':
                     raster_info=row[i]['metadata']['raster']
-                    df_dict['raster_id'].append(raster_info['id'])
-                    df_dict['bbox'].append(raster_info['bbox'])                    
+            df_dict['raster_id'].append(raster_info['id'])
+            df_dict['bbox'].append(raster_info['bbox'])                    
         df_sorted=pd.DataFrame.from_dict(df_dict)
         return df_sorted            
     
@@ -362,7 +362,7 @@ class __WaPOR_API_class(object):
                 
                 
     def getCropRasterURL(self,bbox,cube_code,
-                          time_code,rasterId,APIToken,print_job=True):
+                          time_code,rasterId,APIToken,season=None,stage=None,print_job=False):
         '''
         bbox: str
             latitude and longitude
@@ -391,9 +391,32 @@ class __WaPOR_API_class(object):
         cube_measure_code=cube_info['measure']['code']
         cube_dimensions=cube_info['dimension']
         
+        dimension_params=[]
+        
         for cube_dimension in cube_dimensions:
             if cube_dimension['type']=='TIME':
                 cube_dimension_code=cube_dimension['code']
+                dimension_params.append({
+                "code": cube_dimension_code,
+                "values": [
+                time_code
+                ]
+                })
+            if cube_dimension['code']=='SEASON':                
+                dimension_params.append({
+                "code": 'SEASON',
+                "values": [
+                season
+                ]
+                })
+            if cube_dimension['code']=='STAGE':                
+                dimension_params.append({
+                "code": 'STAGE',
+                "values": [
+                stage
+                ]
+                })                
+        print(dimension_params)
         
         #Query payload
         query_crop_raster={
@@ -411,14 +434,7 @@ class __WaPOR_API_class(object):
               "workspaceCode": self.workspaces[self.version],
               "language": "en"
             },
-            "dimensions": [
-                   {
-                "code": cube_dimension_code,
-                "values": [
-                  time_code
-                ]
-              }
-            ],
+            "dimensions": dimension_params,
             "measures": [
               cube_measure_code
             ],
