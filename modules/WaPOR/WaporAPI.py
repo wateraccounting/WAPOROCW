@@ -188,7 +188,7 @@ class __WaPOR_API_class(object):
         keys=rows_codes+ ['raster_id','bbox','time_code']
         df_dict = { i : [] for i in keys }
         for irow,row in df.iterrows():
-            for i in range(len(row)-1):
+            for i in range(len(row)):
                 if row[i]['type']=='ROW_HEADER':
                     key_info=row[i]['value']
                     df_dict[keys[i]].append(key_info)
@@ -416,7 +416,7 @@ class __WaPOR_API_class(object):
                 stage
                 ]
                 })                
-        print(dimension_params)
+        #print(dimension_params)
         
         #Query payload
         query_crop_raster={

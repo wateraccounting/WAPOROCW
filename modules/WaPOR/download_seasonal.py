@@ -80,11 +80,11 @@ def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31',
                                                WaPOR.API.Token,
                                                season=season_val[row['SEASON']],
                                                stage=raster_stage,
-                                               print_job=True)               
+                                               print_job=False)               
         filename='{0}.tif'.format(row['raster_id'])
         outfilename=os.path.join(Dir,filename)       
         download_file=os.path.join(Dir,'raw_{0}.tif'.format(row['raster_id']))
-        print(download_url)
+        #print(download_url)
         #Download raster file
         resp=requests.get(download_url) 
         open(download_file,'wb').write(resp.content) 
