@@ -24,7 +24,7 @@ def main(Dir, data='AETI',Startdate='2009-01-01', Enddate='2018-12-31',
     latlim -- [ymin, ymax] (values must be between -40.05 and 40.05)
     lonlim -- [xmin, xmax] (values must be between -30.05 and 65.05)
     """
-    print(f'\nDownload WaPOR Level {level} yearly {data} data for the period {Startdate} till {Enddate}')
+    print(f'\nDownload WaPOR Level {level} seasonal {data} data for the period {Startdate} till {Enddate}')
 
     # Download data
     WaPOR.API.version=version
