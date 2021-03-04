@@ -10,6 +10,8 @@ import requests
 import json
 import pandas as pd
 import datetime
+import pickle
+import os
 
 class __WaPOR_API_class(object):
     def __init__(self):    
@@ -21,31 +23,37 @@ class __WaPOR_API_class(object):
         self.path_download=r'https://io.apps.fao.org/gismgr/api/v1/download/'
         self.path_query=r'https://io.apps.fao.org/gismgr/api/v1/query/'
         self.path_jobs=r'https://io.apps.fao.org/gismgr/api/v1/catalog/workspaces/WAPOR/jobs/'
-        self.workspaces={1: 'WAPOR',2: 'WAPOR_2'}
-        self.version=1
+        self.workspaces={2: 'WAPOR_2'}
+        self.version=2    
+        self.cached_catalog={2: os.path.join(os.path.dirname(__file__),'catalog_2.pickle')}
                 
-    def getCatalog(self,level=None,cubeInfo=True):
+    def getCatalog(self,level=None,cubeInfo=True,cached=True):
         '''
         Get catalog from workspace
         ''' 
 
         print('Loading WaPOR catalog...')
-        
-        try:
-            df=self._query_catalog(level)
-        except:
-            print('ERROR: The data with specified level version is not available in this version')
-        if cubeInfo:
-            cubes_measure=[]
-            cubes_dimension=[]
-            for cube_code in df['code'].values:                
-                cubes_measure.append(self._query_cubeMeasures(cube_code,
-                                                                   version=self.version))
-                cubes_dimension.append(self._query_cubeDimensions(cube_code,
-                                                                   version=self.version))
-            df['measure']=cubes_measure
-            df['dimension']=cubes_dimension
-        self.catalog=df
+        if cached:
+            catalog_pickle=self.cached_catalog[self.version]
+            with open(catalog_pickle, 'rb') as handle:
+                self.catalog=pickle.load(handle)        
+        else:
+            try:
+                df=self._query_catalog(level)
+            except:
+                print('ERROR: The data with specified level version is not available in this version')
+            if cubeInfo:
+                cubes_measure=[]
+                cubes_dimension=[]
+                for cube_code in df['code'].values:                
+                    cubes_measure.append(self._query_cubeMeasures(cube_code,
+                                                                       version=self.version))
+                    cubes_dimension.append(self._query_cubeDimensions(cube_code,
+                                                                       version=self.version))
+                df['measure']=cubes_measure
+                df['dimension']=cubes_dimension
+            self.catalog=df
+        print('Loading WaPOR catalog...Done')
         return self.catalog            
             
     def _query_catalog(self,level):
