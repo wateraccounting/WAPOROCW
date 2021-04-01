@@ -43,9 +43,9 @@ Cloner dans Git Bash ([Git](https://git-scm.com/) doit être installé)
     >>> git clone https://github.com/wateraccounting/WAPOROCW.git
 
 
-**Étape 2**: Ouvrez Anaconda Prompt, changez de répertoire pour le dossier **..\WAPOROCW\notebooks**
+**Étape 2**: Ouvrez Anaconda Prompt, changez de répertoire pour le dossier **..\WAPOROCW\notebooks_FR**
 
-    >>> cd ..PATH..\WAPOROCW\notebooks
+    >>> cd ..PATH..\WAPOROCW\notebooks_FR
     
 **Étape 3**: Créer un nouvel environnement à partir du fichier environment.yml
 
