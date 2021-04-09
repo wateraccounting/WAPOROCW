@@ -24,7 +24,9 @@ Authors: Bich Tran, Abebe Chukalla, Solomon Seyoum
     * Get raster and crop raster
     * Get custom Water Productivity raster
 
-### Run notebooks
+### Set up Python environment
+
+**You must do this the first time you open the Jupyter Notebooks**
 
 **Step 1**: Download repository zipfile and unzip 
 
@@ -35,9 +37,9 @@ Clone in Git Bash ([Git](https://git-scm.com/) needs to be installed)
     >>> git clone https://github.com/wateraccounting/WAPOROCW.git
 
 
-**Step 2**: Open Anaconda prompt, change directory to folder **..\WAPOROCW\notebooks**
+**Step 2**: Open Anaconda prompt, change directory to folder **..\WAPOROCW-master**
 
-    >>> cd ..PATH..\WAPOROCW\notebooks
+    >>> cd ..PATH..\WAPOROCW-master\
     
 **Step 3**: Create a new environment from environment.yml file
 
@@ -45,11 +47,17 @@ Clone in Git Bash ([Git](https://git-scm.com/) needs to be installed)
     
 ![](./create_env.PNG)
 
-**Step 4**: Then activate environment with required packages
+### Start Jupyter Notebook
+
+**Step 1**: Change directory to folder **..\WAPOROCW-master\notebooks**
+
+    >>> cd ..PATH..\WAPOROCW-master\notebooks
+ 
+**Step 2**: Then activate environment with required packages
 
     >>> conda activate waporocw
   
-**Step 5**: Start jupyter notebook
+**Step 3**: Start jupyter notebook
 
     >>> jupyter notebook
     

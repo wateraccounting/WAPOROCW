@@ -32,7 +32,9 @@ Ouagadougou, Burkina Faso
     * Obtenir et découper des rasters
     * Obtenir des rasters de productivité de l'eau sur critères personnalisés
 
-### Exécuter des Jupyter notebooks 
+### Configurer l'environnement Python
+
+**Vous devez le faire la première fois que vous ouvrez les notebooks Jupyter**
 
 **Étape 1**: Téléchargez le fichier zip du référentiel et décompressez 
 
@@ -43,9 +45,9 @@ Cloner dans Git Bash ([Git](https://git-scm.com/) doit être installé)
     >>> git clone https://github.com/wateraccounting/WAPOROCW.git
 
 
-**Étape 2**: Ouvrez Anaconda Prompt, changez de répertoire pour le dossier **..\WAPOROCW\notebooks_FR**
+**Étape 2**: Ouvrez Anaconda Prompt, changez de répertoire pour le dossier **..\WAPOROCW-master**
 
-    >>> cd ..PATH..\WAPOROCW\notebooks_FR
+    >>> cd ..PATH..\WAPOROCW-master
     
 **Étape 3**: Créer un nouvel environnement à partir du fichier environment.yml
 
@@ -53,11 +55,17 @@ Cloner dans Git Bash ([Git](https://git-scm.com/) doit être installé)
     
 ![](./create_env.PNG)
 
-**Étape 4**: Ensuite, activez l'environnement avec les packages requis
+### Exécuter des Jupyter notebooks 
+
+**Étape 1**: Changez de répertoire pour le dossier **..\WAPOROCW-master\notebooks_FR**
+
+    >>> cd ..PATH..\WAPOROCW\notebooks_FR
+
+**Étape 2**: Ensuite, activez l'environnement avec les packages requis
 
     >>> conda activate waporocw
   
-**Étape 5**: Commencer jupyter notebook
+**Étape 3**: Commencer jupyter notebook
 
     >>> jupyter notebook
     
