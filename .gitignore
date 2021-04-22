@@ -149,10 +149,4 @@ Thumbs.db #thumbnail cache on Windows
 .prof
 
 modules/WaPOR/wapor_api_token.pickle
-notebooks/Module1_unit4/data
-notebooks/Module1_unit5/data
-notebooks_AR/Module1_unit4/data
-notebooks_AR/Module1_unit5/data
-notebooks_FR/Module1_unit4/data
-notebooks_FR/Module1_unit5/data
 # End of https://www.toptal.com/developers/gitignore/api/python
