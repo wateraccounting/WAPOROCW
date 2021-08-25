@@ -33,9 +33,9 @@ class __WaPOR_API_class(object):
         ''' 
 
         print('Loading WaPOR catalog...')
-        if cached:
-            catalog_pickle=self.cached_catalog[self.version]
-            with open(catalog_pickle, 'rb') as handle:
+        catalog_pickle=self.cached_catalog[self.version]
+        if cached:            
+            with open(catalog_pickle, 'rb') as handle: #read cached catalog
                 self.catalog=pickle.load(handle)        
         else:
             try:
@@ -53,6 +53,8 @@ class __WaPOR_API_class(object):
                 df['measure']=cubes_measure
                 df['dimension']=cubes_dimension
             self.catalog=df
+            with open(catalog_pickle, 'wb') as handle: #cache new catalog
+                pickle.dump(df,handle,protocol=pickle.HIGHEST_PROTOCOL) 
         print('Loading WaPOR catalog...Done')
         return self.catalog            
             
