@@ -93,7 +93,10 @@ def main(Dir, data='AETI', Startdate='2009-01-01', Enddate='2018-12-31',
         driver, NDV, xsize, ysize, GeoT, Projection= gis.GetGeoInfo(download_file)
         Array = gis.OpenAsArray(download_file,nan_values=True)
         Array=np.where(Array<0,0,Array) #mask out flagged value -9998
-        CorrectedArray=Array*multiplier*ndays
+        if data not in ['LCC','PHE']:
+            CorrectedArray=Array*multiplier*ndays
+        else:
+            CorrectedArray=Array*multiplier
         gis.CreateGeoTiff(outfilename,CorrectedArray,
                           driver, NDV, xsize, ysize, GeoT, Projection)
         os.remove(download_file)        
