@@ -3,11 +3,16 @@
 UNESCO-IHE 2017
  Authors: Tim Hessels and Bert Coerver
  @author: Bert Coerver
+ @edited: Mr.holy
 """
 import numpy as np
-import gdal
-import osr
 import os
+try:
+ import gdal
+ import osr
+except:
+ from osgeo import gdal
+ from osgeo import osr
 
 def GetGeoInfo(fh, subdataset = 0):
     """

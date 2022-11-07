@@ -3,11 +3,18 @@
 Created on Tue Jul 30 14:16:35 2019
 
 @author: Bert Coerver
+@edit: Mr.holy
 """
-import numpy as np
-import gdal
-import osr
+
 import os
+import numpy as np
+try:
+    import gdal
+    import osr
+except:
+    from osgeo import gdal
+    from osgeo import osr
+
 
 def GetGeoInfo(fh, subdataset = 0):
     """
